@@ -1,0 +1,24 @@
+{
+  "name": "antd-course",
+  "version": "1.0.0",
+  "description": "[Ant Design 实战教程](https://www.yuque.com/ant-design/course/intro)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuyujin1997/antd-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuyujin1997/antd-course/issues"
+  },
+  "homepage": "https://github.com/wuyujin1997/antd-course#readme",
+  "devDependencies": {
+    "umi": "^2.13.13"
+  }
+}
