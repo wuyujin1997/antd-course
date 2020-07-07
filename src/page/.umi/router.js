@@ -13,16 +13,16 @@ const Router = DefaultRouter;
 
 const routes = [
   {
-    path: '/HelloWorld',
+    path: '/',
+    component: require('../HelloWorld').default,
     exact: true,
-    component: require('../HelloWorld.js').default,
   },
   {
     component: () =>
       React.createElement(
         require('E:/workspaces/git-repo/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
-        { pagesPath: 'src/page', hasRoutesInConfig: false },
+        { pagesPath: 'src/page', hasRoutesInConfig: true },
       ),
   },
 ];
