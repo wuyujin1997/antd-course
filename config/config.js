@@ -11,6 +11,7 @@ export default {
     plugins: [
         ["umi-plugin-react", {
             // 更多配置项
+            antd: true,
         }],
     ],
     
