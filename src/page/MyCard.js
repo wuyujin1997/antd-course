@@ -6,9 +6,10 @@ import React from 'react';
  */
 class MyBox extends React.Component {
     render() {
+        // 要渲染的内容/子组件 直接改用 props.children 获取。
         var element = (
             <div>
-                {this.props.subComponent}
+                {this.props.children}
             </div>
         );
         return element;
@@ -25,6 +26,15 @@ class MyCard extends React.Component {
             <MyBox subComponent={son}>
             </MyBox>
         );
+
+        // - 用自定义的属性去传递组件的subComponent太麻烦了
+        // React组件由默认的属性： this.props.children 用于传递子组件
+        var element = (
+            <MyBox>
+                {son}
+            </MyBox>
+        );
+        // 这样传递子组件，代码更清爽简洁(当子组件的内容足够多的时候)
         
         return element;
     }
