@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/wuyujin1997/antd-course#readme",
   "devDependencies": {
-    "umi": "^2.13.13"
+    "umi": "^2.13.13",
+    "umi-plugin-react": "^1.15.8"
   }
 }

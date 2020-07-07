@@ -7,5 +7,11 @@ export default {
             component: "./HelloWorld",
         }
     ],
+
+    plugins: [
+        ["umi-plugin-react", {
+            // 更多配置项
+        }],
+    ],
     
 };
