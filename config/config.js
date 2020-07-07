@@ -4,18 +4,11 @@ export default {
     routes: [
         {
             path: "/",
-            component: "./HelloWorld",
-        },
-
-        // 新增路由
-        // path 以 / 开头表示绝对路径，以项目根路径为起点
-        // component 指定使用的组件， 以 /src/page/目录为起点计算(umi约定)。
-        { path: "/DemoCard", component: "./DemoCard" },
-
-        { path: "/DemoTabs", component: "./DemoTabs" },
-
-        { path: "/MyCard", component: "./MyCard" },
-        
+            component: "../layout", // component 组件路径，其值以 /src/page/ 目录为起点
+            routes: [
+                { path: "DemoCard", component: "./DemoCard" }
+            ]
+        }
     ],
 
     plugins: [
