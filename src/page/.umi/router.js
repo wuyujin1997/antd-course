@@ -18,6 +18,11 @@ const routes = [
     exact: true,
   },
   {
+    path: '/DemoCard',
+    component: require('../DemoCard').default,
+    exact: true,
+  },
+  {
     component: () =>
       React.createElement(
         require('E:/workspaces/git-repo/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
