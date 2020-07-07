@@ -13,6 +13,8 @@ export default {
         { path: "/DemoCard", component: "./DemoCard" },
 
         { path: "/DemoTabs", component: "./DemoTabs" },
+
+        { path: "/MyCard", component: "./MyCard" },
         
     ],
 
