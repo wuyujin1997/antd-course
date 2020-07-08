@@ -33,7 +33,7 @@ class BasicLayout extends Component {
                     <Menu
                         theme="dark"
                         mode="inline"
-                        defaultSelectKeys={['1']}
+                        defaultSelectedKeys={['1']}
                     >
                         <Menu.Item key="1">
                             <Link to="/helloworld">
