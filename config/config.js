@@ -16,6 +16,7 @@ export default {
             routes: [
                 { path: ".", component: "./HelloWorld" },
                 { path: "./helloworld", component: "./HelloWorld" },
+                { path: "./puzzlecards", component: "./puzzlecards" },
                 {
                     path: "./dashboard",
                     routes: [
@@ -32,6 +33,7 @@ export default {
         ["umi-plugin-react", {
             // 更多配置项
             antd: true,
+            dva: true,  // 启用 dva 插件
         }],
     ],
     
