@@ -3,7 +3,11 @@ import {
 } from "react";
 import {
     Layout,
+    Menu,
+    Icon,
 } from "antd";
+
+const SubMenu = Menu.SubMenu;
 
 const {
     Sider,
@@ -17,7 +21,36 @@ class BasicLayout extends Component {
         var element = (
             <Layout>
                 <Sider width={256} style={{ minHeight: '100vh', color: 'white' }}>
-                Sider
+                    <div
+                        style={{
+                            height: '32px',
+                            background: 'rgba(255,255,255,0.2)',
+                            margin: '16px',
+                        }}
+                    />
+                    <Menu
+                        theme="dark"
+                        mode="inline"
+                        defaultSelectKeys={['1']}
+                    >
+                        <Menu.Item key="1">
+                            <Icon type="pie-chart" />
+                            <span>helloworld</span>
+                        </Menu.Item>
+                        <SubMenu
+                            key="sub1"
+                            title={
+                                <span>
+                                    <Icon type="dashboard" />
+                                    <span>Dashboard</span>
+                                </span>
+                            }
+                        >
+                            <Menu.Item key="2">分析页</Menu.Item>
+                            <Menu.Item key="3">监控页</Menu.Item>
+                            <Menu.Item key="4">工作台</Menu.Item>
+                        </SubMenu>
+                    </Menu>
                 </Sider>
                 <Layout>
                     <Header style={{ background: '#fff', textAlign: 'center', padding: 0 }}>Header</Header>
