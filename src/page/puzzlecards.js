@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
     Card,
-    // Button,
+    Button,
 } from 'antd';
 
 import {
@@ -18,10 +18,25 @@ const namespace = 'puzzlecards';
  */
 const mapStateToProps = (state) => {
     console.log('state(所有namespace的state): ', state);
-    const theCardList = state[namespace];   // 获取指定 namespace 的对象的 state
+    const theNewState = state[namespace];   // 获取指定 namespace 的对象的 state
+    const theCardList = theNewState.data;   // 获取 state.cardList
     console.log('theCardList: ', theCardList);
     return {
         cardList: theCardList
+    };
+};
+
+// 向组件注入方法： this.props.onClickAdd
+const mapDispatchToProps = (dispatch) => {
+    const onClickAdd = (newCard) => {
+        const action = {
+            type: `${namespace}/addNewCard`,
+            payload: newCard,
+        };
+        dispatch(action);
+    }
+    return {
+        onClickAdd,
     };
 };
 
@@ -30,10 +45,14 @@ const mapStateToProps = (state) => {
  *  让组件拿到两样东西： 1. model 中的数据； 2. 改变 model 的方法。
  * 
  * connect 是一个JS函数，接受入参。
- * 第一个参数是函数，这个函数可以把 dva model 中的 state 通过 props 传递到组件内部。
+ * mapStateToProps: 第一个参数是函数，这个函数可以把 dva model 中的 state 通过 props 传递到组件内部。
  * 即： 将 dva model 中的 state 注入到组件中。
+ * 
+ * mapDispatchToProps:
+ *  以 dispatcher 为入参，
+ *  返回一个挂着函数的对象(这些函数会被 dva 并入 props ，注入给组件使用)。
  */
-@connect(mapStateToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 export default class PuzzleCardsPage extends React.Component {
 
     render() {
@@ -52,6 +71,14 @@ export default class PuzzleCardsPage extends React.Component {
                         );
                     })
                 }
+                <div>
+                    <Button onClick={() => {
+                        this.props.onClickAdd({
+                            setup: 'test-dispatcher setup',
+                            punchline: 'test-dispatcher punchline',
+                        })
+                    }}> 添加卡片 </Button>
+                </div>
             </div>
         );
     }
